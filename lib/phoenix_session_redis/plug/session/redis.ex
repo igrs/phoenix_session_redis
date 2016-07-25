@@ -7,8 +7,8 @@ defmodule Plug.Session.Redis do
 
   def get(_conn, sid, {table, _}) do
     case :poolboy.transaction(table, &(:eredis.q(&1, ["GET", sid]))) do
-      {:ok, data} -> {sid, data}
-      _ -> {nil, %{}}
+      {:ok, :undefined} -> {nil, %{}}
+      {:ok, data}       -> {sid, :erlang.binary_to_term(data)}
     end
   end
 
@@ -18,7 +18,7 @@ defmodule Plug.Session.Redis do
 
   def put(_conn, sid, data, {table, _}) do
     case :poolboy.transaction(table, &(:eredis.q(&1, ["SET", sid, data]))) do
-      {:ok, _data} -> sid
+      {:ok, _} -> sid
       _ -> raise "Can not put data to Redis."
     end
   end
@@ -31,7 +31,7 @@ defmodule Plug.Session.Redis do
   defp put_new(data, {table, ttl}) do
     sid = :crypto.strong_rand_bytes(96) |> Base.encode64
     case :poolboy.transaction(table, &(_store_data_with_ttl(&1, ttl, sid, data))) do
-      {:ok, data} -> {sid, data}
+      {:ok, _} -> {sid, data}
       _ -> raise "Can not put data to Redis."
     end
   end
@@ -40,6 +40,7 @@ defmodule Plug.Session.Redis do
     :eredis.q(client, ["SET", sid, data])
   end
   defp _store_data_with_ttl(client, ttl, sid, data) do
-    :eredis.q(client, [["SET", sid, data], ["EXPIRE", sid, ttl]])
+    :eredis.q(client, ["SET", sid, data])
+    :eredis.q(client, ["EXPIRE", sid, ttl])
   end
 end
