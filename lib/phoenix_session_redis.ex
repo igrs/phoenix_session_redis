@@ -8,9 +8,11 @@ defmodule PhoenixSessionRedis do
     Supervisor.start_link(children, opts)
   end
 
-  defp name, do: Application.get_env(:phoenix_session_redis, :name)
+  def name, do: config[:name]
 
-  defp pool, do: Application.get_env(:phoenix_session_redis, :pool)
+  def pool, do: config[:pool]
 
-  defp redis, do: Application.get_env(:phoenix_session_redis, :redis)
+  def redis, do: config[:redis]
+
+  def config, do: Application.get_env(:phoenix_session_redis, :config)
 end
