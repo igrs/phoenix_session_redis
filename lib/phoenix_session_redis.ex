@@ -43,10 +43,6 @@ defmodule PhoenixSessionRedis do
     Supervisor.start_link(children, opts)
   end
 
-  @doc """
-    Get phoenix_session_redis config.
-    if configuration is not found, raise ConfigNotFoundError
-  """
   defp config(key) do
     case Application.get_env(:phoenix_session_redis, :config)[key] do
       nil  -> raise PhoenixSessionRedis.ConfigNotFoundError
