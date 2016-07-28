@@ -22,3 +22,9 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
     end
     ```
 
+## Usage
+
+## Licence
+See [LICENSE](https://github.com/igrs/phoenix_session_redis/blob/master/LICENSE).
+
+## Contribution
