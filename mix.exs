@@ -24,6 +24,7 @@ defmodule PhoenixSessionRedis.Mixfile do
 
   defp deps do
     [
+      {:ex_doc, "~> 0.13", only: :dev},
       {:poolboy, "~> 1.5"},
       {:eredis, "~> 1.0"},
       {:plug, "~> 1.1"}
