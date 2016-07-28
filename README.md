@@ -1,5 +1,6 @@
 # PhoenixSessionRedis
 [![Build Status](https://travis-ci.org/igrs/phoenix_session_redis.svg?branch=master)](https://travis-ci.org/igrs/phoenix_session_redis)
+[![hex.pm version](https://img.shields.io/hexpm/v/phoenix_session_redis.svg)](https://hex.pm/packages/phoenix_session_redis)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 PhoenixSessionRedis provide redis pool and Plug.Session.REDIS.
