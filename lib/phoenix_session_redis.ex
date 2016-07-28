@@ -1,10 +1,11 @@
 defmodule PhoenixSessionRedis do
   @moduledoc """
-  Stores the session in a Redis.
+  This library provide redis pool and Plug.Session.REDIS.
+  Depends on eredis, poolboy and plug.
 
   It is assumed that application is created Phoenix Framework
   and run multi(or one) web server with one redis server for session.
-  (But maybe It can use other elixir application)
+  (But not limited Phoenix Framework)
 
   ## Examples
 
