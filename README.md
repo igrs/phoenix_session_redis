@@ -24,6 +24,7 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 
 ## Usage
 
-## LICENSE
+## Licence
+See [LICENSE](https://github.com/igrs/phoenix_session_redis/LICENSE).
 
 ## Contribution
