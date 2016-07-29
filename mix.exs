@@ -3,7 +3,7 @@ defmodule PhoenixSessionRedis.Mixfile do
 
   def project do
     [app: :phoenix_session_redis,
-     version: "0.1.0",
+     version: "0.1.1",
      elixir: "~> 1.3",
      description: "This library provid redis pool and Plug.Session.REDIS",
      build_embedded: Mix.env == :prod,

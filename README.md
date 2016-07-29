@@ -18,7 +18,7 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 
     ```elixir
     def deps do
-      [{:phoenix_session_redis, "~> 0.1.0"}]
+      [{:phoenix_session_redis, "~> 0.1.1"}]
     end
     ```
 
