@@ -6,6 +6,7 @@ defmodule PhoenixSessionRedisTest do
     store: :redis,
     key: "_session_key",
     table: :redis_sessions,
+    max_age: 60
   ]
   @secret String.duplicate("jigitidi", 8)
   @signing_opts Plug.Session.init(Keyword.put(@default_opts, :encrypt, false))
