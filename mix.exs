@@ -19,7 +19,7 @@ defmodule PhoenixSessionRedis.Mixfile do
 
   def application do
     [applications: [:logger],
-      mod: {PhoenixSessionRedis, []}]
+      mod: {PhoenixSessionRedis, [:eredis, :poolboy]}]
   end
 
   defp deps do
