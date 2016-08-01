@@ -8,7 +8,7 @@ defmodule Plug.Session.REDIS do
   @max_tries 100
 
   def init(opts) do
-    {Keyword.fetch!(opts, :table), Keyword.get(opts, :max_age, :infinite)}
+    {Keyword.fetch!(opts, :table), Keyword.get(opts, :ttl, :infinite)}
   end
 
   def get(_conn, sid, {table, _}) do

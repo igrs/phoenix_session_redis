@@ -58,7 +58,8 @@ Add below example to your Phoenix Framework project.
       store: :redis,                           # Plug.Session.REDIS module
       key: _session_key                        # Cookie name
       table: :redis_sessions,                  # Pool name
-      max_age: 1 * 60 * 60                     # use this value as Redis expiration
+      ttl:     1 * 60 * 60                     # Redis expiration
+      max_age: 1 * 60 * 60                     # Cokkie expiration
     ```
 
 ## Licence
