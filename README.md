@@ -59,7 +59,7 @@ Add below example to your Phoenix Framework project.
       key: _session_key                        # Cookie name
       table: :redis_sessions,                  # Pool name
       ttl:     1 * 60 * 60                     # Redis expiration
-      max_age: 1 * 60 * 60                     # Cokkie expiration
+      max_age: 1 * 60 * 60                     # Cookie expiration
     ```
 
 ## Licence
